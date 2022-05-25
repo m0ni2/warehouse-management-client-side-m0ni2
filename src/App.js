@@ -10,6 +10,7 @@ import Footer from './Pages/Shared/Footer/Footer/Footer';
 import TermsOfService from './Pages/Shared/Footer/Footer/TermsOfService/TermsOfService';
 import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 import Header from './Pages/Shared/Header/Header';
+import Inventory from './Pages/Inventory/Inventory';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/privacypolicy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/inventory/:id' element={<Inventory />} />
       </Routes>
       <Footer />
       <ToastContainer />

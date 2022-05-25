@@ -68,6 +68,7 @@ const Register = () => {
                     <input className={`btn btn-primary w-50 mx-auto d-block ${checked ? '' : 'disabled'}`} type="submit" value="Register" />
                 </form>
                 <p className='my-4'>Already Registered? Please <Link className='text-decoration-none' to='/login'>Login</Link></p>
+
                 <SocialAuth />
             </div>
         </div>

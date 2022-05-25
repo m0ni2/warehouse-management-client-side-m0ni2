@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Golden Harvest Deshi Paratha",
+        "description": "Get a classic golden frozen paratha family pack from us as your daily breakfast. One pack covers for one family. Hassle-free and easy to serve. Just tear off the packet and put it on the griddle for a few minutes and then serve it. It’s a good food for your good health.",
+        "price": 225,
+        "quantity": 20,
+        "weight": "1300 gm",
+        "supplierName": "Golden Harvest",
+        "img": "https://i.ibb.co/mycY0cq/Golden-Harvest-Deshi-Paratha-1.jpg"
+    },
+    {
+        "name": "Bashundhara Flour (Atta)",
+        "description": "Bashundhara Flour (Atta) is milled from selected high protein wheat from America, Australia and Russia using top-notch Swiss technologies from Buhler. Bashundhara Flour (Atta) is the result of attention to detail, consistency in milling, and desire to ensure the very best baking experience possible, every time. Only selected fine Atta is packed for the consumers to ensure taste as well as nutrition.",
+        "price": 96,
+        "quantity": 20,
+        "weight": "2 kg",
+        "supplierName": "Basundhara Group",
+        "img": "https://i.ibb.co/wQH3pF1/Bashundhara-Flour.jpg"
+    },
+    {
+        "name": "Arzish Dates Marium premium Sealed Pack",
+        "description": "Marium date is a celebrated assortment of dates, grown exclusively in Medina, Saudi Arabia. Ranging from a dark brown to almost black colour, these dates are delightfully soft and fruity with a prune-like taste and tend to be of a dry variety.",
+        "price": 555,
+        "quantity": 20,
+        "weight": "500 gm",
+        "supplierName": "Arzish Dates",
+        "img": "https://i.ibb.co/K6Z7nhz/arzish-dates-marium-premium-sealed-pack-500-gm.jpg"
+    }
+]
