@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Register from './Pages/Authentication/Register/Register';
 import LogIn from './Pages/Authentication/LogIn/LogIn';
 import Blog from './Pages/Blog/Blog';
@@ -22,7 +23,6 @@ function App() {
         <Route path='/privacypolicy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
-
       </Routes>
       <Footer />
       <ToastContainer />
