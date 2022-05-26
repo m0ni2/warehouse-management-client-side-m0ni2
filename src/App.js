@@ -12,6 +12,7 @@ import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 import Header from './Pages/Shared/Header/Header';
 import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Inventory />
           </RequireAuth>
         } />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />
