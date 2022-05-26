@@ -45,7 +45,7 @@ const Blog = () => {
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>It is the upgraded version of ECMA script that uses Chrome’s V8 engine written in C++. </td>
+                                        <td>It is the upgraded version of ECMA script that uses Chrome's V8 engine written in C++. </td>
                                         <td>Nodejs is written in C, C++ and Javascript.</td>
                                     </tr>
                                 </tbody>
@@ -59,8 +59,13 @@ const Blog = () => {
                             When should you use <strong className='mx-1'>Nodejs</strong> and when should you use <strong className='mx-1'>Mongodb</strong> ?
                         </Accordion.Header>
                         <Accordion.Body>
-                            <strong className='me-2'>Ans: </strong>
-                            Well, NodeJS and MongoDB are two different process. Here I tried to explain as simpler as possible Shortly we can say, NodeJS is a JavaScript runtime environment. It's actually helps JavaScript to run outside of server. It's used in server side development. But, MongoDB is NoSQL database which is document oriented. It represents data as of JSON documents. It's used for store data. Now we can say, MongoDB is a database where we can store data and NodeJS helps us to to connect our client site to database by it's server site.
+                            <strong className='me-2'>Ans: </strong>NodeJS is a JavaScript runtime environment. It's actually helps JavaScript to run outside of browser. It's used for building back-end services like APIs like Web App or Mobile App etc.
+                            <br />
+                            <br />
+                            MongoDB is NoSQL database which is document oriented. It represents data as of JSON documents. It's used for store data.
+                            <br />
+                            <br />
+                            We can run our backend server using Nodejs and when needed to store data we can use MongoDB.
                         </Accordion.Body>
                     </Accordion.Item>
 
@@ -117,6 +122,7 @@ const Blog = () => {
                         </Accordion.Header>
                         <Accordion.Body>
                             <strong className='me-2'>Ans: </strong>
+                            JWT is stands for JSON Web Token. It's used to securely transfer information over the web(between two parties).
                             When it comes to API authentication and server-to-server authorization, JSON web token (JWT) is particularly a useful technology. In terms of Single Sign-On (SSO), it means that a service provider can receive trustworthy information from the authentication server. By sharing a secret key with the Identity Provider, the Service Provider can hash a part of a token it receives and compare it to the signature of the token. Now, if that result matches the signature, the SP knows that the information provided has come from the other entity possessing the key.
                         </Accordion.Body>
                     </Accordion.Item>
