@@ -11,6 +11,7 @@ import TermsOfService from './Pages/Shared/Footer/Footer/TermsOfService/TermsOfS
 import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 import Header from './Pages/Shared/Header/Header';
 import Inventory from './Pages/Inventory/Inventory';
+import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -24,7 +25,11 @@ function App() {
         <Route path='/privacypolicy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/inventory/:id' element={<Inventory />} />
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <Inventory />
+          </RequireAuth>
+        } />
       </Routes>
       <Footer />
       <ToastContainer />

@@ -1,41 +1,58 @@
 import React, { useRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialAuth from '../SocialAuth/SocialAuth';
 
 const LogIn = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    let errMessage;
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const [
         signInWithEmailAndPassword,
-        user,
-        loading,
-        err1,
+        userSignIn,
+        loadingSignIn,
+        errSignIn,
     ] = useSignInWithEmailAndPassword(auth);
 
     const [
         sendPasswordResetEmail,
-        sending,
-        err2,
+        sendingReset,
+        errReset,
     ] = useSendPasswordResetEmail(auth);
 
+    const [user, loading, err] = useAuthState(auth);
+
+
+    if (errSignIn) {
+        // errMessage = errSignIn.message;
+    }
+
+    if (loading || loadingSignIn || sendingReset) {
+        return <Loading />
+    }
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     const handleLogin = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        if (email && password) {
-            await signInWithEmailAndPassword(email, password);
-            toast('Login Successful');
-            event.target.reset();
-        }
-        else {
-            toast('Please Enter Your Email, Password')
-        }
+        await signInWithEmailAndPassword(email, password);
+        // if (errSignIn) {
+        //     toast(errSignIn.message);
+        // }
+
     }
 
     const handlePasswordReset = async () => {

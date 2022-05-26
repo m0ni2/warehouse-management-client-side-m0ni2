@@ -8,7 +8,7 @@ import logo from '../../../images/logo.png';
 
 const Header = () => {
 
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading, err] = useAuthState(auth);
 
     return (
         <header>

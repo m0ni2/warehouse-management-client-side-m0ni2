@@ -12,10 +12,10 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        err,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const [updateProfile, updating, error1] = useUpdateProfile(auth);
+    const [updateProfile, updating, err1] = useUpdateProfile(auth);
 
     const handleRegister = async event => {
         event.preventDefault();
@@ -30,10 +30,10 @@ const Register = () => {
         setChecked(!checked);
     }
 
-    // if (error) {
+    // if (err) {
     //     return (
     //         <div>
-    //             <p>Error: {error.message}</p>
+    //             <p>err: {err.message}</p>
     //         </div>
     //     );
     // }
