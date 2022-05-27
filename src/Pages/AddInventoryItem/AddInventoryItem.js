@@ -9,11 +9,12 @@ const AddInventoryItem = () => {
         const name = event.target.name.value;
         const price = parseInt(event.target.price.value);
         const quantity = parseInt(event.target.quantity.value);
+        const weight = event.target.weight.value;
         const supplierName = event.target.supplierName.value;
         const description = event.target.description.value;
         const img = event.target.img.value;
 
-        const newItem = { name, description, price, quantity, supplierName, img };
+        const newItem = { name, description, price, quantity, weight, supplierName, img };
 
         await axios.post('http://localhost:5000/product', newItem);
         toast('Item Added')
@@ -36,6 +37,10 @@ const AddInventoryItem = () => {
                     <div className="form-floating mb-3">
                         <input type="number" name='quantity' className="form-control" placeholder='Product Quantity' required />
                         <label htmlFor="floatingInput">Product Quantity:</label>
+                    </div>
+                    <div className="form-floating mb-3">
+                        <input type="text" name='weight' className="form-control" placeholder='Product Quantity' required />
+                        <label htmlFor="floatingInput">Product Weight:</label>
                     </div>
                     <div className="form-floating mb-3">
                         <input type="text" name='supplierName' className="form-control" placeholder='Product Supplier' required />

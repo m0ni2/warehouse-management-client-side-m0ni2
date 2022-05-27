@@ -13,7 +13,7 @@ const InventoryItems = () => {
             <h2 className='text-center mb-4'>Inventory Items</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
-                    products.map(product => <InventoryItem
+                    products.slice(0, 6).map(product => <InventoryItem
                         key={product._id}
                         product={product}
                     />)

@@ -22,7 +22,13 @@ const Header = () => {
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/register">Register</Nav.Link>
                             {user ?
-                                <Button onClick={() => signOut(auth)} variant="link" className='p-1 text-decoration-none'>Logout</Button>
+                                <>
+                                    <Nav.Link as={Link} to="/inventory/manage">Manage Items</Nav.Link>
+                                    <Nav.Link as={Link} to="/inventory/add">Add Item</Nav.Link>
+                                    <Nav.Link as={Link} to="/myitems">My Items</Nav.Link>
+
+                                    <Button onClick={() => signOut(auth)} variant="link" className='p-1 text-decoration-none'>Logout</Button>
+                                </>
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }

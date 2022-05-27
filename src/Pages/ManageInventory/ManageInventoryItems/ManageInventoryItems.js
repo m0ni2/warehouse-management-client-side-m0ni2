@@ -11,7 +11,7 @@ const ManageInventoryItems = ({ product, handleDelete, index }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>{supplierName}</td>
-            <td><Button onClick={() => handleDelete(_id)} className='mx-auto d-block btn-danger'>X</Button></td>
+            <td><Button onClick={() => handleDelete(_id, name)} className='mx-auto d-block btn-danger'>X</Button></td>
         </tr >
     );
 };

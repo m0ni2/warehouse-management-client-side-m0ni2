@@ -10,12 +10,15 @@ import './ManageInventory.css'
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
 
-    const handleDelete = async id => {
-        await axios.delete(`http://localhost:5000/product/${id}`);
-        toast('Items Deleted');
+    const handleDelete = async (id, name) => {
+        const agree = window.confirm(`You're going to delete ${name}`)
+        if (agree) {
+            await axios.delete(`http://localhost:5000/product/${id}`);
+            toast('Items Deleted');
 
-        const remainingProducts = products.filter(product => product._id !== id);
-        setProducts(remainingProducts);
+            const remainingProducts = products.filter(product => product._id !== id);
+            setProducts(remainingProducts);
+        }
     };
 
     return (
