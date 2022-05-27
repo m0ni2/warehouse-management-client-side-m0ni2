@@ -5,6 +5,7 @@ import './SocialLinks.css';
 const SocialLinks = () => {
     return (
         <div className="py-5 bg-light social-links" style={{ background: '#f6f6f6' }}>
+            <h2 className='text-center mb-4'>NewsLater</h2>
             <div className="container  d-flex justify-content-between">
                 <div className="w-50 me-auto d-flex justify-content-start align-items-center">
                     <a className="mx-2" href="https://www.facebook.com/m0ni2/">

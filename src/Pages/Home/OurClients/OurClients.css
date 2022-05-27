@@ -28,4 +28,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(83%) saturate(2262%) hue-rotate(209deg) brightness(99%) contrast(108%);
 }
