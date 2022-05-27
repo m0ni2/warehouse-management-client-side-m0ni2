@@ -42,7 +42,6 @@ const Register = () => {
     // }
     if (user) {
         <p>Registered User: {user.email}</p>
-        console.log(user)
     }
     return (
         <div className='container py-5'>

@@ -11,23 +11,34 @@ const SocialAuth = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const [signInWithGoogle, userGSignIn, loadingGSignIn, errGSignIn] = useSignInWithGoogle(auth);
+    let setErrMessage;
+
+    const [
+        signInWithGoogle,
+        userGSignIn,
+        loadingGSignIn,
+        errGSignIn
+    ] = useSignInWithGoogle(auth);
 
     const [user, loading, err] = useAuthState(auth);
 
-
+    if (errGSignIn) {
+        setErrMessage = errGSignIn.message;
+    }
+    if (loadingGSignIn || loading) {
+        return <Loading />
+    }
     if (user) {
         navigate(from, { replace: true });
     }
 
     const handleGoogleSignIn = async () => {
         await signInWithGoogle();
-        // if (!errGSignIn) {
-        //     toast('Login Successful');
-        // }
-        // else {
-        //     toast(errGSignIn.message);
-        // }
+        if (user) {
+            toast('Successfully Login');
+            setErrMessage = ''
+        }
+
     }
 
     return (
@@ -37,6 +48,7 @@ const SocialAuth = () => {
                 <h2 className='mx-2'>Or</h2>
                 <span className='w-50 border-bottom'></span>
             </div>
+            <p className='text-danger'>{setErrMessage}</p>
             <Button onClick={handleGoogleSignIn} className='btn btn-primary w-50 mx-auto d-block'>Login With Google</Button>
         </div>
     );

@@ -10,11 +10,14 @@ import SocialAuth from '../SocialAuth/SocialAuth';
 const LogIn = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    let errMessage;
+    let setErrMessage;
+
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+
+    const [user, loading, err] = useAuthState(auth);
 
     const [
         signInWithEmailAndPassword,
@@ -29,11 +32,8 @@ const LogIn = () => {
         errReset,
     ] = useSendPasswordResetEmail(auth);
 
-    const [user, loading, err] = useAuthState(auth);
-
-
     if (errSignIn) {
-        // errMessage = errSignIn.message;
+        setErrMessage = errSignIn.message;
     }
 
     if (loading || loadingSignIn || sendingReset) {
@@ -48,11 +48,12 @@ const LogIn = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        await signInWithEmailAndPassword(email, password);
-        // if (errSignIn) {
-        //     toast(errSignIn.message);
-        // }
 
+        await signInWithEmailAndPassword(email, password);
+        if (userSignIn) {
+            toast('Successfully Login');
+            setErrMessage = '';
+        }
     }
 
     const handlePasswordReset = async () => {
@@ -85,7 +86,7 @@ const LogIn = () => {
                 <p className='mt-4 mb-2 d-flex align-items-center'>Not Registerd? Please <Link className='p-1 text-decoration-none' to='/register'>Register</Link>
                 </p>
                 <p className='mt-2 mb-4 d-flex align-items-center'>Forgot Password? Please <Button onClick={handlePasswordReset} variant="link" className='p-1 text-decoration-none'>Reset</Button></p>
-
+                <p className='text-danger'>{setErrMessage}</p>
                 <SocialAuth />
             </div>
         </div>
