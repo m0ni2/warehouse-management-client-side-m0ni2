@@ -7,7 +7,7 @@ import LogIn from './Pages/Authentication/LogIn/LogIn';
 import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer/Footer';
-import TermsOfService from './Pages/Shared/Footer/Footer/TermsOfService/TermsOfService';
+import TermsOfService from './Pages/Shared/Footer/TermsOfService/TermsOfService';
 import Header from './Pages/Shared/Header/Header';
 import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
@@ -16,8 +16,6 @@ import ManageInventory from './Pages/ManageInventory/ManageInventory/ManageInven
 import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 import MyItems from './Pages/MyItems/MyItems';
 import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
-
-import "swiper/css/bundle";
 
 function App() {
   return (

@@ -10,7 +10,7 @@ const Blog = () => {
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
                             <strong className='me-2'>Q-1: </strong>
-                            Difference between <strong className='mx-1'>Javascript</strong> and <strong className='mx-1'>Nodejs</strong> ?
+                            Difference between Javascript and Nodejs ?
                         </Accordion.Header>
                         <Accordion.Body>
                             <strong className='me-2'>Ans: </strong>
@@ -56,7 +56,7 @@ const Blog = () => {
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>
                             <strong className='me-2'>Q-2: </strong>
-                            When should you use <strong className='mx-1'>Nodejs</strong> and when should you use <strong className='mx-1'>Mongodb</strong> ?
+                            When should you use Nodejs and when should you use Mongodb ?
                         </Accordion.Header>
                         <Accordion.Body>
                             <strong className='me-2'>Ans: </strong>NodeJS is a JavaScript runtime environment. It's actually helps JavaScript to run outside of browser. It's used for building back-end services like APIs like Web App or Mobile App etc.
@@ -72,7 +72,7 @@ const Blog = () => {
                     <Accordion.Item eventKey="2">
                         <Accordion.Header>
                             <strong className='me-2'>Q-3: </strong>
-                            Differences between <strong className='mx-1'>SQL</strong> and <strong className='mx-1'>NoSQL</strong> databases.?
+                            Differences between SQL and NoSQL databases.?
                         </Accordion.Header>
                         <Accordion.Body>
                             <strong className='me-2'>Ans: </strong>
@@ -118,7 +118,7 @@ const Blog = () => {
                     <Accordion.Item eventKey="3">
                         <Accordion.Header>
                             <strong className='me-2'>Q-4: </strong>
-                            What is the purpose of <strong className='mx-1'>JWT</strong> and how does it work?
+                            What is the purpose of JWT and how does it work?
                         </Accordion.Header>
                         <Accordion.Body>
                             <strong className='me-2'>Ans: </strong>
