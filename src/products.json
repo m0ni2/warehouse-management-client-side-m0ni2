@@ -1,29 +1,102 @@
 [
     {
-        "name": "Golden Harvest Deshi Paratha",
-        "description": "Get a classic golden frozen paratha family pack from us as your daily breakfast. One pack covers for one family. Hassle-free and easy to serve. Just tear off the packet and put it on the griddle for a few minutes and then serve it. It's a good food for your good health.",
-        "price": 225,
-        "quantity": 20,
-        "weight": "1300 gm",
-        "supplierName": "Golden Harvest",
-        "img": "https://i.ibb.co/mycY0cq/Golden-Harvest-Deshi-Paratha-1.jpg"
+        "name": "Cashew Nut (Kaju Badam)",
+        "description": "100% Organic Cashew Nut",
+        "price": 99,
+        "quantity": 5,
+        "weight": "100 gm",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/6YNNmmj/ezgif-com-gif-maker.jpg"
     },
     {
-        "name": "Bashundhara Flour (Atta)",
-        "description": "Bashundhara Flour (Atta) is milled from selected high protein wheat from America, Australia and Russia using top-notch Swiss technologies from Buhler. Bashundhara Flour (Atta) is the result of attention to detail, consistency in milling, and desire to ensure the very best baking experience possible, every time. Only selected fine Atta is packed for the consumers to ensure taste as well as nutrition.",
-        "price": 96,
-        "quantity": 20,
+        "name": "Chashi Aromatic Chinigura Rice",
+        "description": "Chashi Aromatic Chinigura Rice",
+        "price": 140,
+        "quantity": 49,
+        "weight": "1 kg",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/p0NnFD1/ezgif-com-gif-maker-1.jpg"
+    },
+    {
+        "name": "Pran Chinigura Aromatic Rice",
+        "description": "Pran Chinigura Aromatic Rice (Polau). Fresh and Clean,\nVacuum Packed. Pran Chinigura Rice can be use in Biriyani, Polau, Firni, Kheer, Khichuri.",
+        "price": 265,
+        "quantity": 35,
         "weight": "2 kg",
-        "supplierName": "Basundhara Group",
-        "img": "https://i.ibb.co/wQH3pF1/Bashundhara-Flour.jpg"
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/3hWG1yc/ezgif-com-gif-maker-2.jpg"
     },
     {
-        "name": "Arzish Dates Marium premium Sealed Pack",
-        "description": "Marium date is a celebrated assortment of dates, grown exclusively in Medina, Saudi Arabia. Ranging from a dark brown to almost black colour, these dates are delightfully soft and fruity with a prune-like taste and tend to be of a dry variety.",
-        "price": 555,
-        "quantity": 20,
+        "name": "Saffola Active Plus Edible Oil",
+        "description": "Saffola Active with Goodness of 5 contains Oryzanol, Omega 3, Vitamin A & Vitamin E, and ensures upto 25%* less oil absorption, for active life management of you and your family.",
+        "price": 1600,
+        "quantity": 16,
+        "weight": "5 Litter",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/7rQZptN/ezgif-com-gif-maker-4.jpg"
+    },
+    {
+        "name": "Fresh Fortified Soyabean Oil",
+        "description": "Fresh Fortified Soyabean Oil follows 3 steps of refining process-Perfect Degumming & Neutralization, Balanced De-colorization and Five steps Deodorization to ensure right ratio of Omega 3 & 6 and intact Beta-carotene in Soyabean Oil. Fresh soyabean oil contain vitamin A. Its fresh and healthy.",
+        "price": 1576,
+        "quantity": 21,
+        "weight": "8 Litter",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/qFGp5vP/ezgif-com-gif-maker-5.jpg"
+    },
+    {
+        "name": " Ruchi Puffed Rice (Muri)",
+        "description": "Breakfast is important for your whole day's sustenance. We are giving you a mouthwatering breakfast like ruchi puffed rice (muri) for your daily needs. Brand name: square food and beverage. Net weight 500gm.",
+        "price": 65,
+        "quantity": 45,
         "weight": "500 gm",
-        "supplierName": "Arzish Dates",
-        "img": "https://i.ibb.co/K6Z7nhz/arzish-dates-marium-premium-sealed-pack-500-gm.jpg"
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/0VmmxQ8/ezgif-com-gif-maker-6.jpg"
+    },
+    {
+        "name": "Golden Harvest Deshi Paratha",
+        "description": "Get a classic golden frozen paratha family pack from us as your daily breakfast. One pack covers for one family. Hassle-free and easy to serve",
+        "price": 225,
+        "quantity": 50,
+        "weight": "1300 gm",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/hRrzdv9/ezgif-com-gif-maker-7.jpg"
+    },
+    {
+        "name": "Golden Harvest Deshi Paratha",
+        "description": "Get a classic golden frozen paratha family pack from us as your daily breakfast. One pack covers for one family. Hassle-free and easy to serve",
+        "price": 225,
+        "quantity": 50,
+        "weight": "1300 gm",
+        "supplierName": "M.k Enterprise",
+        "img": "https://i.ibb.co/hRrzdv9/ezgif-com-gif-maker-7.jpg"
+    },
+    {
+        "email": "monir.rj@gmail.com",
+        "name": "Cashew Nut (Kaju Badam)",
+        "description": "this is original",
+        "price": 99,
+        "quantity": 5,
+        "weight": "100 gm",
+        "supplierName": "mk",
+        "img": "https://i.ibb.co/6YNNmmj/ezgif-com-gif-maker.jpg"
+    }
+]
+// bannerData
+[
+    {
+        "caption": "Cashew Nut (Kaju Badam)",
+        "body": "this is original",
+        "img": "https://i.ibb.co/S6MWhXy/slider-1.jpg"
+    },
+    {
+        "caption": "LOGISTIC SERVICES",
+        "body": "this is original",
+        "img": "https://i.ibb.co/1XLYtG7/slider-2.jpg"
+    },
+    {
+        "caption": "Cashew Nut (Kaju Badam)",
+        "body": "this is original",
+        "img": "https://i.ibb.co/CPKthwJ/slider-3.jpg"
     }
 ]

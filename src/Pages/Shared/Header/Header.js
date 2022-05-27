@@ -11,7 +11,7 @@ const Header = () => {
     const [user, loading, err] = useAuthState(auth);
 
     return (
-        <header>
+        <header className='sticky-top'>
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to="/"><img src={logo} style={{ width: '200px' }} alt="Logo" /></Navbar.Brand>
@@ -32,7 +32,6 @@ const Header = () => {
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
-
                         </Nav>
                         <Navbar.Text>
                             <span>{user ? `${user.displayName}` : ''}</span>

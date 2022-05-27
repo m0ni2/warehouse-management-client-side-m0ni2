@@ -1,7 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
 import Register from './Pages/Authentication/Register/Register';
 import LogIn from './Pages/Authentication/LogIn/LogIn';
 import Blog from './Pages/Blog/Blog';
@@ -16,6 +14,9 @@ import ManageInventory from './Pages/ManageInventory/ManageInventory/ManageInven
 import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 import MyItems from './Pages/MyItems/MyItems';
 import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -23,12 +24,12 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/home' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/termsofservice' element={<TermsOfService />} />
         <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/aboutUs' element={<AboutUs />} />
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <Inventory />

@@ -23,7 +23,7 @@ const SocialLinks = () => {
                             placeholder="Your Email"
                             aria-label="Email"
                         />
-                        <Button variant="outline-secondary" id="button-addon2">
+                        <Button variant="primary">
                             Subscribe
                         </Button>
                     </InputGroup>

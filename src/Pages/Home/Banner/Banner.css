@@ -1,0 +1,11 @@
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-next {
+    display: none !important;
+}
+
+/* .carousel-caption {
+    right: 15% !important;
+    left: initial !important;
+    bottom: 15% !important;
+} */
