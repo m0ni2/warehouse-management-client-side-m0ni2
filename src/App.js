@@ -17,6 +17,7 @@ import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
 import MyItems from './Pages/MyItems/MyItems';
 import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 
+import "swiper/css/bundle";
 
 function App() {
   return (
