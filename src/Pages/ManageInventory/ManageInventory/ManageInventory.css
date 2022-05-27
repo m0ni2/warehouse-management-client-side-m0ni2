@@ -1,0 +1,9 @@
+.add-new-item {
+    position: relative
+}
+
+.add-new-item link {
+    position: absolute;
+    right: 0;
+    top: 0
+}

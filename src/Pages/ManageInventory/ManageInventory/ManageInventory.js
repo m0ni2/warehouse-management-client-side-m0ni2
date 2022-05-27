@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { Table } from 'react-bootstrap';
+import React from 'react';
+import { Button, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProducts from '../../../hooks/useProducts';
 import ManageInventoryItems from '../ManageInventoryItems/ManageInventoryItems';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
@@ -20,6 +22,11 @@ const ManageInventory = () => {
         <div className='container py-5 d-flex align-items-center'>
             <div className='col col-md-8 mx-auto'>
                 <h2 className='mb-3 text-center'>Manage Inventory</h2>
+                <div className="add-new-item">
+                    <Link to='/inventory/add'>
+                        <Button variant="link" className='btn-primary text-white text-decoration-none my-4 d-block ms-auto'>Add New Item</Button>
+                    </Link>
+                </div>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
