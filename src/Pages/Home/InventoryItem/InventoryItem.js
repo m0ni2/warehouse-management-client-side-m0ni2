@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const Item = ({ product }) => {
+const InventoryItem = ({ product }) => {
     const { _id, name, description, price, quantity, supplierName, img } = product;
     const navigate = useNavigate();
 
@@ -25,4 +25,4 @@ const Item = ({ product }) => {
     );
 };
 
-export default Item;
+export default InventoryItem;

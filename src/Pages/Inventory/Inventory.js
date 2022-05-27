@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Inventory = () => {
@@ -13,21 +13,44 @@ const Inventory = () => {
         const getProduct = async () => {
             const { data } = await axios.get(`http://localhost:5000/product/${id}`);
             setProduct(data);
-            console.log(data);
         }
         getProduct();
     }, []);
 
-    const handleDelivered = async (id) => {
-        await axios.get(`http://localhost:5000/product/${id}?delivered=1`);
-        toast('delivered');
-
-        const newQuantity = product.quantity - 1;
+    const updateProduct = quntty => {
+        const nwQuantity = quntty;
         const { quantity, ...rest } = product;
-        const newProduct = { quantity: newQuantity, ...rest };
+        const newProduct = { quantity: nwQuantity, ...rest };
         setProduct(newProduct);
+    }
 
+    const handleDelivered = async () => {
+        const newQuantity = quantity - 1;
+        if (newQuantity > -1) {
+            await axios.get(`http://localhost:5000/product/${_id}?delivered=1`);
+            toast('Product Delivered');
+            updateProduct(newQuantity);
+        }
+        else {
+            toast('Product cannot be negative value');
+        }
     };
+
+    const handleReStock = async (event) => {
+        event.preventDefault();
+        let newQuantity = parseInt(event.target.quantity.value);
+        if (newQuantity > 0) {
+            await axios.get(`http://localhost:5000/product/${_id}?reStock=${newQuantity}`);
+            toast('Product Added');
+
+            newQuantity += quantity;
+            updateProduct(newQuantity);
+            event.target.reset();
+        }
+        else {
+            toast('Product cannot be negative value');
+        }
+    }
 
     return (
         <div className='container py-5 d-flex align-items-center'>
@@ -46,20 +69,23 @@ const Inventory = () => {
                                 <p className="card-text">{description}</p>
                                 <p className="card-text">Supplier: {supplierName}</p>
                                 <p className="card-text">Product ID: {_id}</p>
-                                <Button onClick={() => handleDelivered(_id)} className='btn btn-primary d-block mx-auto'>Delivered</Button>
+                                <Button onClick={() => handleDelivered()} className='btn btn-primary d-block ms-auto w-50'>Delivered</Button>
 
-                                {/* <div className='py-5'>
-                                    <h2 className='mb-3'>Re-Stock the Item</h2>
-                                    <form className=''>
-                                        <input type="email" name='email' className="form-control w-25" placeholder='name@example.com' required />
+                                <div className='py-5'>
+                                    <h4 className='mb-3'>Re-Stock the Item</h4>
+                                    <form onSubmit={handleReStock} className='d-flex justify-content-between'>
+                                        <input type="quantity" name='quantity' className="form-control w-50" placeholder='Quantity' required />
 
-                                        <input className={`btn btn-primary mx-auto d-block `} type="submit" value="Re-Stock" />
+                                        <input className='btn btn-primary ms-auto d-block w-50' type="submit" value="Re-Stock" />
                                     </form>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <Link to='/inventory/manage'>
+                    <Button variant="link" className='btn-primary text-white text-decoration-none my-4 d-block mx-auto'>Manage Inventories</Button>
+                </Link>
             </div>
         </div>
     );

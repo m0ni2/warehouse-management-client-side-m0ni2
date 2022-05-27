@@ -13,6 +13,8 @@ import Header from './Pages/Shared/Header/Header';
 import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import ManageInventory from './Pages/ManageInventory/ManageInventory/ManageInventory';
+
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <Inventory />
+          </RequireAuth>
+        } />
+        <Route path='/inventory/manage' element={
+          <RequireAuth>
+            <ManageInventory />
           </RequireAuth>
         } />
         <Route path='*' element={<NotFound />} />
