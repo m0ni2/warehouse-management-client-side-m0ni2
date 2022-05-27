@@ -10,7 +10,7 @@ const Footer = () => {
         <footer className='container d-flex justify-content-between py-5'>
             <div className='d-flex'>
                 <Nav.Link as={Link} to="/termsofservice">Terms of Service</Nav.Link>
-                <Nav.Link as={Link} to="/privacypolicy">Privacy Policy</Nav.Link>
+                <Nav.Link as={Link} to="/privacyPolicy">Privacy Policy</Nav.Link>
             </div>
             <div>
                 <span>&copy; {thisYear} Groceteria Warehouse</span>

@@ -8,13 +8,14 @@ import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer/Footer';
 import TermsOfService from './Pages/Shared/Footer/Footer/TermsOfService/TermsOfService';
-import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 import Header from './Pages/Shared/Header/Header';
 import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import ManageInventory from './Pages/ManageInventory/ManageInventory/ManageInventory';
 import AddInventoryItem from './Pages/AddInventoryItem/AddInventoryItem';
+import MyItems from './Pages/MyItems/MyItems';
+import PrivacyPolicy from './Pages/Shared/Footer/PrivacyPolicy/PrivacyPolicy';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/termsofservice' element={<TermsOfService />} />
-        <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+        <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
         <Route path='/inventory/:id' element={
@@ -42,6 +43,11 @@ function App() {
         <Route path='/inventory/add' element={
           <RequireAuth>
             <AddInventoryItem />
+          </RequireAuth>
+        } />
+        <Route path='/inventory/myItems' element={
+          <RequireAuth>
+            <MyItems />
           </RequireAuth>
         } />
         <Route path='*' element={<NotFound />} />

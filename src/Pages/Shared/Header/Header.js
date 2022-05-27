@@ -25,7 +25,7 @@ const Header = () => {
                                 <>
                                     <Nav.Link as={Link} to="/inventory/manage">Manage Items</Nav.Link>
                                     <Nav.Link as={Link} to="/inventory/add">Add Item</Nav.Link>
-                                    <Nav.Link as={Link} to="/myitems">My Items</Nav.Link>
+                                    <Nav.Link as={Link} to="/inventory/myItems">My Items</Nav.Link>
 
                                     <Button onClick={() => signOut(auth)} variant="link" className='p-1 text-decoration-none'>Logout</Button>
                                 </>
