@@ -4,6 +4,7 @@ import { Button, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axiosPrivate from '../../api/axiosPrivate';
 import auth from '../../firebase.init';
 import ManageInventoryItems from '../ManageInventory/ManageInventoryItems/ManageInventoryItems';
 
@@ -14,7 +15,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const getMyProducts = async () => {
-            const { data } = await axios.get(`http://localhost:5000/product?email=${user.email}`);
+            const { data } = await axiosPrivate.get(`http://localhost:5000/myItems?email=${user.email}`);
             setMyProducts(data);
         }
         getMyProducts();

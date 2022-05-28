@@ -10,6 +10,7 @@ const Header = () => {
 
     const [user, loading, err] = useAuthState(auth);
 
+
     return (
         <header className='sticky-top'>
             <Navbar bg="light" expand="lg">
@@ -20,7 +21,6 @@ const Header = () => {
                         <Nav className="ms-auto ms-5">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="/register">Register</Nav.Link>
                             {user ?
                                 <>
                                     <Nav.Link as={Link} to="/inventory/manage">Manage Items</Nav.Link>
@@ -30,7 +30,10 @@ const Header = () => {
                                     <Button onClick={() => signOut(auth)} variant="link" className='p-1 text-decoration-none'>Logout</Button>
                                 </>
                                 :
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                <>
+                                    <Nav.Link as={Link} to="/register">Register</Nav.Link>
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                </>
                             }
                         </Nav>
                         <Navbar.Text>

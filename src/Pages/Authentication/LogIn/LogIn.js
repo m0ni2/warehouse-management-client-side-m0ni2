@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 import Loading from '../../Shared/Loading/Loading';
 import SocialAuth from '../SocialAuth/SocialAuth';
 
@@ -17,7 +19,8 @@ const LogIn = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const [user, loading, err] = useAuthState(auth);
+
+
 
     const [
         signInWithEmailAndPassword,
@@ -32,15 +35,17 @@ const LogIn = () => {
         errReset,
     ] = useSendPasswordResetEmail(auth);
 
+    const [user, loading, err] = useAuthState(auth);
+
     if (errSignIn) {
         setErrMessage = errSignIn.message;
     }
 
-    if (loading || loadingSignIn || sendingReset) {
+    if (loading) {
         return <Loading />
     }
 
-    if (user) {
+    if (userSignIn) {
         navigate(from, { replace: true });
     }
 
@@ -48,12 +53,10 @@ const LogIn = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-
         await signInWithEmailAndPassword(email, password);
-        if (userSignIn) {
-            toast('Successfully Login');
-            setErrMessage = '';
-        }
+        const accessToken = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', accessToken.data.accessToken);
+
     }
 
     const handlePasswordReset = async () => {

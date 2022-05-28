@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialAuth from '../SocialAuth/SocialAuth';
@@ -13,7 +13,7 @@ const Register = () => {
         user,
         loading,
         err,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, err1] = useUpdateProfile(auth);
 
@@ -30,19 +30,7 @@ const Register = () => {
         setChecked(!checked);
     }
 
-    // if (err) {
-    //     return (
-    //         <div>
-    //             <p>err: {err.message}</p>
-    //         </div>
-    //     );
-    // }
-    // if (loading) {
-    //     return <p>Loading...</p>;
-    // }
-    if (user) {
-        <p>Registered User: {user.email}</p>
-    }
+
     return (
         <div className='container py-5'>
             <div className='col col-md-8 col-lg-6 mx-auto'>
