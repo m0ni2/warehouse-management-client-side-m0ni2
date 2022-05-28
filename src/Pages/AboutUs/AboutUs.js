@@ -8,7 +8,7 @@ const AboutUs = () => {
             <div className="row">
                 <div className="col-md-4">
                     <div>
-                        <img src='https://i.ibb.co/BcbxxCn/aboutUs.jpg' className='w-100' alt="Monir Logo" />
+                        <img src='https://i.ibb.co/BcbxxCn/aboutUs.jpg' className='w-100' alt="Logo" />
                     </div>
                 </div>
                 <div className="col-md-6 offset-md-2">
