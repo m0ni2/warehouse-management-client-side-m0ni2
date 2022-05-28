@@ -54,7 +54,7 @@ const LogIn = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const accessToken = await axios.post('http://localhost:5000/login', { email });
+        const accessToken = await axios.post('https://groceteria-warehouse.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', accessToken.data.accessToken);
 
     }

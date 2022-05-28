@@ -20,7 +20,7 @@ const AddInventoryItem = () => {
 
         const newItem = { email, name, description, price, quantity, weight, supplierName, img };
 
-        await axios.post('http://localhost:5000/product', newItem);
+        await axios.post('https://groceteria-warehouse.herokuapp.com/product', newItem);
         toast('Item Added')
     }
 

@@ -15,7 +15,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const getMyProducts = async () => {
-            const { data } = await axiosPrivate.get(`http://localhost:5000/myItems?email=${user.email}`);
+            const { data } = await axiosPrivate.get(`https://groceteria-warehouse.herokuapp.com/myItems?email=${user.email}`);
             setMyProducts(data);
         }
         getMyProducts();
@@ -24,7 +24,7 @@ const MyItems = () => {
     const handleDelete = async (id, name) => {
         const agree = window.confirm(`You're going to delete ${name}`)
         if (agree) {
-            await axios.delete(`http://localhost:5000/product/${id}`);
+            await axios.delete(`https://groceteria-warehouse.herokuapp.com/product/${id}`);
             toast('Items Deleted');
 
             const remainingProducts = myProducts.filter(product => product._id !== id);

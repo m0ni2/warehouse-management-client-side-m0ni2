@@ -13,7 +13,7 @@ const ManageInventory = () => {
     const handleDelete = async (id, name) => {
         const agree = window.confirm(`You're going to delete ${name}`)
         if (agree) {
-            await axios.delete(`http://localhost:5000/product/${id}`);
+            await axios.delete(`https://groceteria-warehouse.herokuapp.com/product/${id}`);
             toast('Items Deleted');
 
             const remainingProducts = products.filter(product => product._id !== id);

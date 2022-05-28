@@ -6,7 +6,7 @@ const useProducts = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const { data } = await axios.get('http://localhost:5000/product');
+            const { data } = await axios.get('https://groceteria-warehouse.herokuapp.com/product');
             setProducts(data);
         }
         getProducts();

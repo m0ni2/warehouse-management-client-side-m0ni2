@@ -11,7 +11,7 @@ const Inventory = () => {
 
     useEffect(() => {
         const getProduct = async () => {
-            const { data } = await axios.get(`http://localhost:5000/product/${id}`);
+            const { data } = await axios.get(`https://groceteria-warehouse.herokuapp.com/product/${id}`);
             setProduct(data);
         }
         getProduct();
@@ -27,7 +27,7 @@ const Inventory = () => {
     const handleDelivered = async () => {
         const newQuantity = quantity - 1;
         if (newQuantity > -1) {
-            await axios.get(`http://localhost:5000/product/${_id}?delivered=1`);
+            await axios.get(`https://groceteria-warehouse.herokuapp.com/product/${_id}?delivered=1`);
             toast('Product Delivered');
             updateProduct(newQuantity);
         }
@@ -40,7 +40,7 @@ const Inventory = () => {
         event.preventDefault();
         let newQuantity = parseInt(event.target.quantity.value);
         if (newQuantity > 0) {
-            await axios.get(`http://localhost:5000/product/${_id}?reStock=${newQuantity}`);
+            await axios.get(`https://groceteria-warehouse.herokuapp.com/product/${_id}?reStock=${newQuantity}`);
             toast('Product Added');
 
             newQuantity += quantity;
