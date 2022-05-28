@@ -6,8 +6,15 @@ const useProducts = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            const { data } = await axios.get('https://groceteria-warehouse.herokuapp.com/product');
-            setProducts(data);
+            try {
+                const { data } = await axios.get('https://groceteria-warehouse.herokuapp.com/product');
+                setProducts(data);
+            }
+            catch (err) {
+                getProducts();
+            }
+            // const { data } = await axios.get('https://groceteria-warehouse.herokuapp.com/product');
+            // setProducts(data);
         }
         getProducts();
     }, []);
