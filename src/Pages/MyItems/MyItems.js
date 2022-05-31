@@ -15,8 +15,13 @@ const MyItems = () => {
 
     useEffect(() => {
         const getMyProducts = async () => {
-            const { data } = await axiosPrivate.get(`https://groceteria-warehouse.herokuapp.com/myItems?email=${user.email}`);
-            setMyProducts(data);
+            try {
+                const { data } = await axiosPrivate.get(`https://groceteria-warehouse.herokuapp.com/myItems?email=${user.email}`);
+                setMyProducts(data);
+            }
+            catch {
+                getMyProducts();
+            }
         }
         getMyProducts();
     }, []);

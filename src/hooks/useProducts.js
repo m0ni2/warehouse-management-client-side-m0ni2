@@ -13,8 +13,6 @@ const useProducts = () => {
             catch (err) {
                 getProducts();
             }
-            // const { data } = await axios.get('https://groceteria-warehouse.herokuapp.com/product');
-            // setProducts(data);
         }
         getProducts();
     }, []);
